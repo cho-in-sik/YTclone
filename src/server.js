@@ -1,2 +1,5 @@
+import express from "express";
 
-console.log("iam good!!!!!!!");
+const app = express();
+
+app.listen(5050, () => console.log("Server listening on port 5050"));
