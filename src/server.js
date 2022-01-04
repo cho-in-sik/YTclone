@@ -7,9 +7,10 @@ import videoRouther from "./routers/videoRouter";
 const PORT = 3000;
 
 const app = express();
+
+app.set("view engine","pug");
+app.set("views",process.cwd() + "/src/views");
 app.use(morgan("dev"));
-
-
 app.use("/",globalRouter);
 app.use("/video",videoRouther);
 app.use("/users",userRouter);
