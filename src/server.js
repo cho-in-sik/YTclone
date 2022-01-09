@@ -12,7 +12,7 @@ app.set("view engine","pug");
 app.set("views",process.cwd() + "/src/views");
 app.use(morgan("dev"));
 app.use("/",globalRouter);
-app.use("/video",videoRouther);
+app.use("/videos",videoRouther);
 app.use("/users",userRouter);
 
 

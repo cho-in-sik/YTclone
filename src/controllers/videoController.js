@@ -1,38 +1,44 @@
-
-export const trending = (req,res) => {
-    const videos = [
+ let videos = [
      {
-      title:"First Vidoe",
+      title:"First Video",
       rating:5,
       comments:2,
       createdAt: "2 minites age",
       views:59,
-      id:1   
+      id:1  
      },
      {
-      title:"Second Vidoe",
+      title:"Second Video",
       rating:5,
       comments:2,
       createdAt: "2 minites age",
       views:59,
-      id:1   
+      id:2   
      },
      {
-      title:"Third Vidoe",
+      title:"Third Video",
       rating:5,
       comments:2,
       createdAt: "2 minites age",
       views:59,
-      id:1   
+      id:3   
      },
     ];
-    res.render("home",{pageTilte:"Home", videos});
+export const trending = (req,res) => {
+    res.render("home",{pageTitle:"Home", videos});
 };
-export const see = (req,res) => res.render("watch");
-export const edit = (req,res) => res.render("edit");
-export const search = (req,res) => res.send("Search");
-export const deleteVideo = (req,res) => {
-    return res.send("DeleteVideo");
+export const watch = (req,res) => {
+    const {id} = req.params;
+    const video = videos[id-1];
+    return res.render("watch",{pageTitle:`Watching : ${video.title}`,video });
 }
-export const upload = (req,res) => res.send("Upload");
+export const getEdit = (req,res) => {
+    const {id} = req.params;
+    const video = videos[id-1];
+    return res.render("edit",{pageTitle:`Editing : ${video.title}`,video});
+};
+export const postEdit = (req,res) => {};
+
+
+
 
