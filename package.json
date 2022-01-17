@@ -6,7 +6,7 @@
     "url": "git+https://github.com/cho-in-sik/ytClone.git"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node src/server.js"
+    "dev": "nodemon --exec babel-node src/init.js"
   },
   "author": "Matt",
   "license": "MIT",
@@ -16,6 +16,8 @@
   "homepage": "https://github.com/cho-in-sik/ytClone#readme",
   "dependencies": {
     "express": "^4.17.2",
+    "mongodb": "^4.3.0",
+    "mongoose": "^6.1.6",
     "morgan": "^1.10.0",
     "pug": "^3.0.2"
   },
